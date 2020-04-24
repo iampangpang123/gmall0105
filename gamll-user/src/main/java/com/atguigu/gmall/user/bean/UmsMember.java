@@ -1,9 +1,19 @@
 package com.atguigu.gmall.user.bean;
 
+import lombok.Data;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Data
 public class UmsMember {
-
+    //因为通用的mapper为我们提供增删改没有主键返回（如果数据库里面的主键是自增的话），需要我们配置
+    //id标识代表这个是主键
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)代表主键返回政策是主键自增
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String memberLevelId;//这个字段数据库是int类型，因为mysql会自动帮我门转换
     private String username;
@@ -23,157 +33,6 @@ public class UmsMember {
     private int growth;
     private int luckeyCount;
     private int historyIntegration;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getMemberLevelId() {
-        return memberLevelId;
-    }
-
-    public void setMemberLevelId(String memberLevelId) {
-        this.memberLevelId = memberLevelId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public int getGender() {
-        return gender;
-    }
-
-    public void setGender(int gender) {
-        this.gender = gender;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job;
-    }
-
-    public String getPersonalizedSignature() {
-        return personalizedSignature;
-    }
-
-    public void setPersonalizedSignature(String personalizedSignature) {
-        this.personalizedSignature = personalizedSignature;
-    }
-
-    public int getSourceType() {
-        return sourceType;
-    }
-
-    public void setSourceType(int sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    public int getIntegration() {
-        return integration;
-    }
-
-    public void setIntegration(int integration) {
-        this.integration = integration;
-    }
-
-    public int getGrowth() {
-        return growth;
-    }
-
-    public void setGrowth(int growth) {
-        this.growth = growth;
-    }
-
-    public int getLuckeyCount() {
-        return luckeyCount;
-    }
-
-    public void setLuckeyCount(int luckeyCount) {
-        this.luckeyCount = luckeyCount;
-    }
-
-    public int getHistoryIntegration() {
-        return historyIntegration;
-    }
-
-    public void setHistoryIntegration(int historyIntegration) {
-        this.historyIntegration = historyIntegration;
-    }
-
-
-
 
 
 }
