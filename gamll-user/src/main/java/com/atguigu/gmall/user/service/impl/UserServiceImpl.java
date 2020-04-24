@@ -1,9 +1,12 @@
 package com.atguigu.gmall.user.service.impl;
 
+import com.atguigu.gmall.user.bean.UmsMember;
 import com.atguigu.gmall.user.mapper.UserMapper;
 import com.atguigu.gmall.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -13,5 +16,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public String hello() {
         return "hello";
+    }
+    public List<UmsMember> getAllUser(){
+        return userMapper.getAllUser();
     }
 }
