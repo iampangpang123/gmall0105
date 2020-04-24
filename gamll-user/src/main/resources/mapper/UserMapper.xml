@@ -3,7 +3,7 @@
 <mapper namespace="com.atguigu.gmall.user.mapper.UserMapper">
 
 
-    <select id="getAllUser" resultType="com.atguigu.gmall.user.bean.UmsMember">
+    <select id="getAllUser" resultType="com.atguigu.gmall.bean.UmsMember">
   select id,username,password from ums_member
 
  </select>

@@ -1,12 +1,14 @@
 package com.atguigu.gmall.user.service.impl;
 
-import com.atguigu.gmall.user.bean.UmsMember;
-import com.atguigu.gmall.user.bean.UmsMemberReceiveAddress;
+
+import com.atguigu.gmall.bean.UmsMember;
+import com.atguigu.gmall.bean.UmsMemberReceiveAddress;
+import com.atguigu.gmall.service.UserService;
+
 import com.atguigu.gmall.user.mapper.UmsMemberReceiveAddressMapper;
 import com.atguigu.gmall.user.mapper.UserMapper;
-import com.atguigu.gmall.user.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -28,7 +30,6 @@ public class UserServiceImpl implements UserService {
     public List<UmsMember> getAllUser() {
         //这是我们自己写的单表增删改查，我们注释掉，测试通用mapper为我们提供的增删改
         return userMapper.getAllUser();
-
 
     }
 
