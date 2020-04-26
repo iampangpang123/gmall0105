@@ -1,24 +1,24 @@
 # gmall0105
 ####################################常用命令#############################
-netstat -ant|grep 8180  查看端口号是否占用
-netstat -ant|grep 8180  查看端口号是否占用
-chmod 777 后面接文件 解决权限不够的问题
-dhclient  刷新网络
+netstat -ant|grep 8180  查看端口号是否占用  
+netstat -ant|grep 8180  查看端口号是否占用  
+chmod 777 后面接文件 解决权限不够的问题  
+dhclient  刷新网络  
 
 #####################################虚拟机##############################
-1.gmall_01    192.168.81.128（后面用到图片上传服务器，我可能会给子网段改成25，，那么ip为：192.168.25.128）
-   账号：root   密码：123456
- 1.1:Dubbo
-       软件位置：root/apache-tomcat-7.0.47
-       端口号：8080
-       访问地址：http://192.168.81.128:8080/dubbo-admin-2.5.4/
-       账号：root   密码：root
-       注意：需要先启动Zookeeper
- 1.2:zookeeper
-     端口号：2181
-     启动：./zkServer start
-     关闭：./zkServer stop
-     查询启动状态：./zkServer status
+1.gmall_01    192.168.81.128（后面用到图片上传服务器，我可能会给子网段改成25，，那么ip为：192.168.25.128）  
+   账号：root   密码：123456  
+ 1.1:Dubbo  
+       软件位置：root/apache-tomcat-7.0.47  
+       端口号：8080  
+       访问地址：http://192.168.81.128:8080/dubbo-admin-2.5.4/  
+       账号：root   密码：root  
+       注意：需要先启动Zookeeper  
+ 1.2:zookeeper  
+     端口号：2181  
+     启动：./zkServer start  
+     关闭：./zkServer stop  
+     查询启动状态：./zkServer status  
 
 
 
