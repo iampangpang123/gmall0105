@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,10 +11,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.atguigu.gamll</groupId>
+    <groupId>com.atguigu.gmall</groupId>
     <artifactId>gmall-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--打包成pom,因为它只负责管理版本号-->
     <packaging>pom</packaging>
 
 
@@ -21,6 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
         <fastjson.version>1.2.46</fastjson.version>
         <dubbo-starter.version>1.0.10</dubbo-starter.version>
         <dubbo.version>2.6.0</dubbo.version>
@@ -42,7 +43,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!--  因为我们用的是阿里巴巴的dubbo框架，不用spring的Jackson是因为，Jackson或者gson配dubbo协议可能出现乱码-->
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
@@ -55,7 +55,6 @@
             </dependency>
 
             <dependency>
-                <!--zooker，dubbo的注册中心-->
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
@@ -73,7 +72,7 @@
                 <version>${mybatis.version}</version>
             </dependency>
 
-            <!-- 下面三个依赖配套使用的，TheLeaf要用,之前学过-->
+
             <dependency>
                 <groupId>net.sourceforge.nekohtml</groupId>
                 <artifactId>nekohtml</artifactId>
@@ -100,26 +99,25 @@
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-            <!--http工具类,发送http协议-->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${httpclient.version}</version>
             </dependency>
-             <!--就是操作java基础数据类型对应包装的的工具包-->
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
 
-            <!--通用的Mapper依赖，实现逆向工程工程-->
+
             <dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${mapper-starter.version}</version>
             </dependency>
-           <!--redis客户端，jedis-->
+
             <dependency>
                 <groupId>redis.clients</groupId>
                 <artifactId>jedis</artifactId>
@@ -127,7 +125,6 @@
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/io.searchbox/jest -->
-
             <dependency>
                 <groupId>io.searchbox</groupId>
                 <artifactId>jest</artifactId>
@@ -140,23 +137,19 @@
                 <artifactId>jna</artifactId>
                 <version>${jna.version}</version>
             </dependency>
-        <!--    工具包，之前我们web开发的时候，用到的，-->
+
             <dependency>
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${beanUtils.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.10</version>
-            </dependency>
 
         </dependencies>
-
-
     </dependencyManagement>
+
+
+
 
 
 </project>
