@@ -10,11 +10,11 @@ dhclient  刷新网络
    >账号：root   密码：123456  
 >1.1:Dubbo
 >                      
-       软件位置：root/apache-tomcat-7.0.47  
-       端口号：8080  
-       访问地址：http://192.168.81.128:8080/dubbo-admin-2.5.4/  
-       账号：root   密码：root  
-       注意：需要先启动Zookeeper  
+    软件位置：root/apache-tomcat-7.0.47  
+    端口号：8080  
+    访问地址：http://192.168.81.128:8080/dubbo-admin-2.5.4/  
+    账号：root   密码：root  
+    注意：需要先启动Zookeeper  
 >1.2:zookeeper 
 > 
      端口号：2181  
@@ -43,7 +43,12 @@ dhclient  刷新网络
  >前端项目:后端得接口地址：gmall-manage-web   192.168.84.128：8081
   如果启动失败，顺序执行下面两个命令   
  >>npm uninstall --save node-sass      
- >>npm install   --save node-sass
+ >>npm install   --save node-sass  
+ >>由于前后端分离，前后端端口不一致产生了跨域问题，解决方案：
+ >>>1.Nginx    我们后面再配置（现在暂时用@CrossOrigin解决一下）
+ >>>2.jsonp
+ >>>3.跨域注解（@CrossOrigin，加在controller类上）
+ >>>4.继承WebMvcConfigurerAdapter重写addCorsMappings（）,原理跟3是一样的，只不过这种方法是全局配置
 
    
 

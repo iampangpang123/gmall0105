@@ -20,6 +20,9 @@ public class PmsBaseCatalog2 implements Serializable {
     @Column
     private String catalog1Id;
 
+    /** @Transient  中文意思是游离的
+     * 这个注解告诉mybatis这不是数据库的字段，在执行保存，插入的时候忽略这个字段
+     */
     @Transient
     private List<PmsBaseCatalog3> catalog3List;
 

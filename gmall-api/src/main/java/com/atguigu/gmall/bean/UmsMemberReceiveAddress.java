@@ -2,6 +2,15 @@ package com.atguigu.gmall.bean;
 
 import javax.persistence.Id;
 import java.io.Serializable;
+/*
+**
+ * 实体类的名称要与表名对应，不然通用mapper不知道查哪一个表
+ * 比如这个实体类对应的表名是Ums_Member_Receive_Address,因为是驼峰命名，无需指定表名。不然需要用table注解指定表名
+ * @Table(name="t_sys_user_role")//设置数据库中表名字(JPA的注解)
+ * @author ttao
+ * @param
+ * @return
+ */
 
 public class UmsMemberReceiveAddress implements Serializable {
 
