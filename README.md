@@ -25,7 +25,8 @@ dhclient  刷新网络
 
 
 ###2.gmall_02    192.168.1.173  
-  >账号：root     密码：123456
+  >账号：root     密码：123456  
+
  
 
 
@@ -37,10 +38,10 @@ dhclient  刷新网络
  >
 ###3.gmall-manage-service   192.168.84.128：8071
  > 
-###4.gmall-manage-web       192.168.84.128： 8081
+###4.gmall-manage-web       192.168.84.128：8081
  >  
 ###5.gmall-admin              127.0.0.1:8888
- >前端项目:后端得接口地址：gmall-manage-web   192.168.84.128：8081
+ >前端后端管理项目:调取得后端得接口地址：gmall-manage-web   192.168.84.128：8081
   如果启动失败，顺序执行下面两个命令   
  >>npm uninstall --save node-sass      
  >>npm install   --save node-sass  

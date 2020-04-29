@@ -22,9 +22,15 @@ public class AttrInfoController {
     AttrService attrService;
 
     @ResponseBody
-    @RequestMapping(value = "/attrInfoList",method = {RequestMethod.GET,RequestMethod.POST})
-    public List<PmsBaseAttrInfo> attrInfoList(String catalog3Id){
+    @RequestMapping(value = "/saveAttrInfo",method = {RequestMethod.POST})
+    public void  saveAttrInfo(@RequestBody PmsBaseAttrInfo pmsBaseAttrInfo){
+        attrService.saveAttrInfo(pmsBaseAttrInfo);
 
-        return  attrService.attrInfoList(catalog3Id);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/attrInfoList",method = {RequestMethod.POST,RequestMethod.GET})
+    public List<PmsBaseAttrInfo>  attrInfoList(String  catalog3Id){
+         return attrService.attrInfoList(catalog3Id);
     }
 }
