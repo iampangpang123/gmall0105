@@ -6,17 +6,18 @@ chmod 777 后面接文件 解决权限不够的问题
 dhclient  刷新网络  
 
 #2.虚拟机       
-###1.gmall_01    192.168.81.128（后面我搭建图片上传服务器，我可能会给网段改成25，，那么ip为：192.168.25.128）  
+###1.gmall_01    192.168.25.128（虚拟机改成25网段，不然用不了FastDFS，当时配置的网段是25，）  
    >账号：root   密码：123456  
 >1.1:Dubbo
 >                      
     软件位置：root/apache-tomcat-7.0.47  
     端口号：8080  
-    访问地址：http://192.168.81.128:8080/dubbo-admin-2.5.4/  
+    访问地址：http://192.168.25.128:8080/dubbo-admin-2.5.4/  
     账号：root   密码：root  
     注意：需要先启动Zookeeper  
 >1.2:zookeeper 
 > 
+     ip:192.168.25.128
      端口号：2181  
      启动：./zkServer start  
      关闭：./zkServer stop  
@@ -32,16 +33,16 @@ dhclient  刷新网络
 
 #3.服务端口号
 
-###1.gmall-user-service     192.168.84.128：8070  
+###1.gmall-user-service     127.0.0.1：8070  
  >
-###2.gmall-user-web         192.168.84.128：8080   
+###2.gmall-user-web         127.0.0.1：8080   
  >
-###3.gmall-manage-service   192.168.84.128：8071
+###3.gmall-manage-service   127.0.0.1：8071
  > 
-###4.gmall-manage-web       192.168.84.128：8081
+###4.gmall-manage-web       127.0.0.1：8081
  >  
-###5.gmall-admin              127.0.0.1:8888
- >前端后端管理项目:调取得后端得接口地址：gmall-manage-web   192.168.84.128：8081
+###5.gmall-admin            127.0.0.1:8888
+ >>前端后端管理项目:调取得后端得接口地址：gmall-manage-web   127.0.0.1：8081
   如果启动失败，顺序执行下面两个命令   
  >>npm uninstall --save node-sass      
  >>npm install   --save node-sass  
