@@ -1,6 +1,7 @@
 package com.atguigu.gmall.service.catalog;
 
 import com.atguigu.gmall.bean.PmsBaseAttrInfo;
+import com.atguigu.gmall.bean.PmsBaseSaleAttr;
 
 import java.util.List;
 
@@ -24,4 +25,12 @@ public interface AttrService {
      * @return   保存结果（是否失败)
      */
     String  saveAttrInfo(PmsBaseAttrInfo pmsBaseAttrInfo);
+
+
+    /**
+     * 查询所有的销售属性，销售属性是平台数据字典定义的，也就是商城的后台管理种，管理员添加平台属性
+     * 销售属性的值 可以让商家定义
+     * @return
+     */
+    public  List<PmsBaseSaleAttr> baseAttrValueList();
 }

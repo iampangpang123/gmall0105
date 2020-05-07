@@ -28,6 +28,14 @@ dhclient  刷新网络
 ###2.gmall_02    192.168.1.173  
   >账号：root     密码：123456  
 
+
+###3.gmall-image-server    192.168.25.133  
+  >1.账号：root     密码：itcast  
+  >2.图片服务器测试地址：  
+  >>http://192.168.25.133/group1/M00/00/00/wKgZhV6zb2aAWjJjAACLKjl6Sog589.jpg
+
+
+
  
 
 
