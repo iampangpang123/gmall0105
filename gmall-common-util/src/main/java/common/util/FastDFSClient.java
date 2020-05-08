@@ -72,3 +72,4 @@ public class FastDFSClient {
 		return uploadFile(fileContent, extName, null);
 	}
 }
+

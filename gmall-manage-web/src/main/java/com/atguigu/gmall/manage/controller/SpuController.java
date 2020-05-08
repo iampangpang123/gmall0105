@@ -1,7 +1,9 @@
 package com.atguigu.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.atguigu.gmall.bean.PmsProductImage;
 import com.atguigu.gmall.bean.PmsProductInfo;
+import com.atguigu.gmall.bean.PmsProductSaleAttr;
 import com.atguigu.gmall.service.spu.SpuService;
 import common.util.FastDFSClient;
 import common.util.JsonUtils;
@@ -58,8 +60,8 @@ public class SpuController {
     @ResponseBody
     public void saveSpuInfo(@RequestBody PmsProductInfo pmsProductInfo) {
 
-
-        System.out.println("aaaaaaaaaaaaaaaaaaaa");
+        spuService.saveSpuInfo(pmsProductInfo);
+        System.out.println("web：保存成功！");
     }
 
 
@@ -68,7 +70,7 @@ public class SpuController {
     public String fileUpload(@RequestParam("file") MultipartFile MultipartFile) {
 
             /*
-        图片上传服务器暂时没有开启，我们先随便返回一个本机地址
+        图片上传服务器暂时没有开启的时候，我们先随便返回一个本机地址
          */
         //  return "C:\\Users\\92397\\Pictures\\Saved Pictures\\6626003a708ce8ef.jpg";
         try {
@@ -86,12 +88,32 @@ public class SpuController {
             String url = fastDFSClient.uploadFile(MultipartFile.getBytes(), extName);
             //补充为完整的url
             url = IMAGE_SERVER_URL + url;
+            System.out.println(url);//打印一下url
             return url;
         } catch (Exception e) {
             System.out.println("上传到FASTDFS失败！");
             System.out.println(e.getMessage());
             return "上传失败";
         }
+
+    }
+
+
+    @RequestMapping("spuSaleAttrList")
+    @ResponseBody
+    public List<PmsProductSaleAttr> spuSaleAttrList(String spuId) {
+        List<PmsProductSaleAttr> pmsProductSaleAttrs = spuService.spuSaleAttrList(spuId);
+        return pmsProductSaleAttrs;
+
+    }
+
+
+    @RequestMapping("spuImageList")
+    @ResponseBody
+    public List<PmsProductImage> spuImageList(String spuId) {
+
+        List<PmsProductImage> pmsProductImages = spuService.spuImageList(spuId);
+        return  pmsProductImages;
 
     }
 

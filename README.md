@@ -39,28 +39,34 @@ dhclient  刷新网络
  
 
 
-#3.服务端口号
+#3.服务端口号+启动顺序
 
-###1.gmall-user-service     127.0.0.1：8070  
+###1.gmall-user-service     127.0.0.1：8070     2
  >
-###2.gmall-user-web         127.0.0.1：8080   
+###2.gmall-user-web         127.0.0.1：8080     1
  >
-###3.gmall-manage-service   127.0.0.1：8071
- > 
-###4.gmall-manage-web       127.0.0.1：8081
+###3.gmall-manage-service   127.0.0.1：8071     1
  >  
-###5.gmall-admin            127.0.0.1:8888
+###4.gmall-manage-web       127.0.0.1：8081     2
+ >  
+###5.gmall-admin            127.0.0.1:8888     0
  >>前端后端管理项目:调取得后端得接口地址：gmall-manage-web   127.0.0.1：8081
   如果启动失败，顺序执行下面两个命令   
  >>npm uninstall --save node-sass      
  >>npm install   --save node-sass  
  >>由于前后端分离，前后端端口不一致产生了跨域问题，解决方案：
- >>>1.Nginx    我们后面再配置（现在暂时用@CrossOrigin解决一下）
- >>>2.jsonp
- >>>3.跨域注解（@CrossOrigin，加在controller类上）
+ >>>1.Nginx    我们后面再配置（现在暂时用@CrossOrigin解决一下）  
+ >>>2.jsonp  
+ >>>3.跨域注解（@CrossOrigin，加在controller类上）  
  >>>4.继承WebMvcConfigurerAdapter重写addCorsMappings（）,原理跟3是一样的，只不过这种方法是全局配置
 
    
+##注意
+>1.Controller
+>>1.1:controller我们需要加@CrossOrigin
+>>1.2:Controller引用service，不要用@Autowire注解，要用Alibaba的@Reference注解  
+>2.Service
+>>2.1:Service的实现类一定的@Service注解一定要是Alibaba的@service注解而不是spring的
 
 
 

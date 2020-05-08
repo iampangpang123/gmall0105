@@ -1,6 +1,8 @@
 package com.atguigu.gmall.service.spu;
 
+import com.atguigu.gmall.bean.PmsProductImage;
 import com.atguigu.gmall.bean.PmsProductInfo;
+import com.atguigu.gmall.bean.PmsProductSaleAttr;
 
 import java.util.List;
 
@@ -22,5 +24,17 @@ public interface SpuService {
     List<PmsProductInfo> spuList(String catalog3Id);
 
 
+    /**
+     * 保存spu,添加一个spu，
+     * @param pmsProductInfo
+     */
+    void saveSpuInfo(PmsProductInfo pmsProductInfo);
+
+
+
+    public List<PmsProductSaleAttr> spuSaleAttrList(String spuId );
+
+
+    public List<PmsProductImage> spuImageList(String spuId);
 
 }
