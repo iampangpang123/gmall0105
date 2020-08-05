@@ -41,19 +41,22 @@ dhclient  刷新网络
 
 #3.服务端口号+启动顺序
 
-###1.gmall-user-service     127.0.0.1：8070     2
+###1.gmall-user-service     127.0.0.1：8070     B2
  >
-###2.gmall-user-web         127.0.0.1：8080     1
+###2.gmall-user-web         127.0.0.1：8080     B1
  >
-###3.gmall-manage-service   127.0.0.1：8071     1
+###3.gmall-manage-service   127.0.0.1：8071     A2
  >  
-###4.gmall-manage-web       127.0.0.1：8081     2
+###4.gmall-manage-web       127.0.0.1：8081     A3
  >  
-###5.gmall-admin            127.0.0.1:8888     0
+###5.gmall-admin            127.0.0.1:8888      A1
+ >
+###6.gmall-item-web         127.0.0.1:8082      
+
  >>前端后端管理项目:调取得后端得接口地址：gmall-manage-web   127.0.0.1：8081
   如果启动失败，顺序执行下面两个命令   
- >>npm uninstall --save node-sass      
- >>npm install   --save node-sass  
+ >>npm uninstall -->save node-sass      
+ >>npm install   -->save node-sass  
  >>由于前后端分离，前后端端口不一致产生了跨域问题，解决方案：
  >>>1.Nginx    我们后面再配置（现在暂时用@CrossOrigin解决一下）  
  >>>2.jsonp  

@@ -15,6 +15,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
   <!-- 用fastjson配合dubbo协议，防止使用gson，jsokson出现乱码-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -77,7 +81,10 @@
             <artifactId>spring-boot-starter-dubbo</artifactId>
         </dependency>
 
-
+<!--        <dependency> &lt;!&ndash; 引入log4j2依赖 &ndash;&gt;-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-log4j2</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
 

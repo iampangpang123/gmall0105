@@ -16,4 +16,9 @@ public interface SkuService {
      * @return
      */
     void saveSkuInfo(PmsSkuInfo pmsSkuInfo);
+
+    /*
+      根据skuid,得到商品信息
+     */
+    PmsSkuInfo getSkuById(String skuId);
 }

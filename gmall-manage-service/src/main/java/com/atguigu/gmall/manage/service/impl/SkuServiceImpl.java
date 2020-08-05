@@ -9,6 +9,7 @@ import com.atguigu.gmall.manage.mapper.*;
 import com.atguigu.gmall.service.sku.SkuService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -66,5 +67,21 @@ public class SkuServiceImpl implements SkuService {
             pmsSkuSaleAttrValueMapper.insertSelective(pmsSkuSaleAttrValue);
         }
 
+    }
+
+    @Override
+    public PmsSkuInfo getSkuById(String skuId) {
+        Example example=new Example(PmsSkuInfo.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("id",skuId);
+        PmsSkuInfo pmsSkuInfo = pmsSkuInfoMapper.selectOneByExample(example);
+        if (pmsSkuInfo!=null){
+            //查询图片
+            PmsSkuImage pmsSkuImage=new PmsSkuImage();
+            pmsSkuImage.setSkuId(skuId);
+            List<PmsSkuImage> pmsSkuImages = pmsSkuImageMapper.select(pmsSkuImage);
+            pmsSkuInfo.setSkuImageList(pmsSkuImages);
+        }
+        return pmsSkuInfo ;
     }
 }

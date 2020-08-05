@@ -8,4 +8,13 @@
 
  </select>
 
+
+    <select id="getAllUserMap" resultType="map">
+  select id,username,password,DATE_FORMAT(create_time, '%Y-%m-%d %H:%i:%s')  create_time from ums_member
+ </select>
+
+
+    <select id="getOneMapUSer" resultType="map">
+      select  IFNULL(icon,'')  from ums_member  limit 1,1;
+ </select>
 </mapper>

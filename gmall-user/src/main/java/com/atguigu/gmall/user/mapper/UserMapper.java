@@ -6,6 +6,7 @@ import com.atguigu.gmall.bean.UmsMember;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /*要继承 tk.mybatis.mapper.common.Mapper才能实现单表查询不写sql
 * 我们在UserServiceImpl里面直接声明UserMapper UserMapper
@@ -18,4 +19,8 @@ import java.util.List;
 public interface UserMapper extends tk.mybatis.mapper.common.Mapper<UmsMember> {
 
     List<UmsMember> getAllUser();
+
+    List<Map<String,Object>> getAllUserMap();
+
+    Map  getOneMapUSer();
 }

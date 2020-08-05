@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -54,6 +55,11 @@ public class UserServiceImpl implements UserService {
         //createCriteria就相当于再where后面添加条件
         example.createCriteria().andEqualTo("memberId", "1");
         return umsMemberReceiveAddressMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Map<String, Object>> getAllUserMap() {
+        return userMapper.getAllUserMap();
     }
 
 
